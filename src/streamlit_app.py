@@ -1,15 +1,41 @@
-from scripts.streamilit import load_country_data, plot_ghi_distribution
 import sys
 import os
 import streamlit as st
-from scripts.streamilit import load_country_data, plot_ghi_distribution, top_regions_by_ghi
-from utils.config import Config
+import pandas as pd
+import plotly.express as px
 
-# Get the absolute path of the directory containing streamlit_app.py
-current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.join(current_dir, '..', '..')
-sys.path.insert(0, project_root)
 
+class Config:
+    BENIN_DATA_PATH = 'clean_data/benin_clean.csv'
+    SIERRALEONE_DATA_PATH = 'clean_data/sierraleone_clean.csv'
+    TOGO_DATA_PATH = 'clean_data/togo_clean.csv'
+    BENIN = 'benin'
+    SIERRALEONE = "sierraleone"
+    TOGO = 'togo'
+
+
+@st.cache_data
+def load_country_data(path: str) -> pd.DataFrame:
+    return pd.read_csv(path)
+
+
+def top_regions_by_ghi(df: pd.DataFrame, top_n: int = 5) -> pd.DataFrame:
+    return df.groupby("Timestamp")["GHI"].mean().sort_values(ascending=False).head(top_n).reset_index()
+
+
+def plot_ghi_distribution(df: pd.DataFrame, country: str):
+    fig = px.box(
+        df, x='Timestamp', y='GHI',
+        color_discrete_sequence=['#FDB813'],
+        title=f"GHI Distribution in {country}",
+        template='plotly_white'
+    )
+    fig.update_layout(xaxis_title="Region",
+                      yaxis_title="GHI (kWh/m²/day)", showlegend=False)
+    return fig
+
+
+# Stream lit UI implementation
 st.set_page_config(page_title="Solar Insights Dashboard", layout="wide")
 
 st.title("Solar Energy Insights Dashboard")
