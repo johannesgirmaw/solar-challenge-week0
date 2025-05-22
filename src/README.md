@@ -8,7 +8,7 @@ A Streamlit-powered interactive dashboard for exploring solar potential across B
 - 📍 Top 5 regions with highest solar potential
 - 🔍 Interactive country filter
 
-## Setu
+## Setup
 
 ```
 
