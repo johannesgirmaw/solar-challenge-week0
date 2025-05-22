@@ -5,16 +5,16 @@ A modular, object-oriented data science project analyzing solar potential across
 ## Project Structure
 
 solar-challenge-week1/
-├── clean_data/            # Cleaned CSVs for each country
-├── data/                  # Raw CSVs from solar dataset
-├── notebooks/             # Jupyter Notebooks (EDA + Comparison)
-├── scripts/               # Modularized Python scripts
-├── src/                   # (Optional future extension)
-├── tests/                 # Unit test directory
-├── .github/workflows/     # GitHub Actions CI pipeline
-├── requirements.txt       # Python dependencies
-├── README.md              # Project documentation
-└── .gitignore             # Git ignored files
+├── clean_data/ # Cleaned CSVs for each country
+├── data/ # Raw CSVs from solar dataset
+├── notebooks/ # Jupyter Notebooks (EDA + Comparison)
+├── scripts/ # Modularized Python scripts
+├── src/ # (Optional future extension)
+├── tests/ # Unit test directory
+├── .github/workflows/ # GitHub Actions CI pipeline
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── .gitignore # Git ignored files
 
 ## Getting Started
 
@@ -76,6 +76,14 @@ Then navigate to:
 - Statistical testing (ANOVA & Kruskal–Wallis).
 - Visual bar chart of average GHI.
 - Markdown insights for reporting.
+
+### ✅ Task 4: Dashboard using Streamlit
+
+- Widgets to select countries.
+
+* Boxplot of GHI or other plots .
+* Top regions table.
+* URL : [https://yohannes-solar-dashboard.streamlit.app/](https://yohannes-solar-dashboard.streamlit.app/ "https://yohannes-solar-dashboard.streamlit.app/")
 
 ---
 
