@@ -1,23 +1,26 @@
-## Run the main.py script
+# Solar Insights Dashboard
+
+A Streamlit-powered interactive dashboard for exploring solar potential across Benin, Togo, and Sierra Leone.
+
+## Features
+
+- 📊 Boxplots for GHI visualization
+- 📍 Top 5 regions with highest solar potential
+- 🔍 Interactive country filter
+
+## Setu
 
 ```
-python src/main.py
+
+### Create & Activate a Virtual Environment
+
+python -m venv venv
+venv\Scripts\activate
 ```
 
-Incasing running issues like this
-
 ```
-Traceback (most recent call last):
-  File "/home/<username>/10Academy/Week0/code/solar-challenge-week1/src/main.py", line 1, in <module>
-    from scripts.read_file import read_csv_file
-ModuleNotFoundError: No module named 'scripts'
-```
+### Install the requirements and run the streamlit app
 
-Run this command
-
-It will add the project root explicitly to PYTHONPATH
-
-```
-cd solar-challenge-week1
-export PYTHONPATH=$PYTHONPATH:$(pwd)
+pip install -r requirements.txt
+streamlit run src/streamlit_app.py
 ```
