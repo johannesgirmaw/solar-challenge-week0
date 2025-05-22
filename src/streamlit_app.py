@@ -1,8 +1,8 @@
-import streamlit as st
-from utils.config import Config
-from scripts.streamilit import load_country_data, plot_ghi_distribution, top_regions_by_ghi
 import sys
 import os
+import streamlit as st
+from scripts.streamilit import load_country_data, plot_ghi_distribution, top_regions_by_ghi
+from utils.config import Config
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
